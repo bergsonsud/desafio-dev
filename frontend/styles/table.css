@@ -1,0 +1,40 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #b14920;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background-color: #d0d8d8;
+    transition: background-color 0.3s;
+}
+
+.store-row td {
+    background-color: #4b5553;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+td[colspan="3"] {
+    font-size: 1.1em;
+    padding: 15px;
+}
