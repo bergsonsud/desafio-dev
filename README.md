@@ -83,3 +83,29 @@ Este desafio foi baseado neste outro desafio: https://github.com/lschallenges/da
 ---
 
 Boa sorte!
+
+
+---
+
+# Passos iniciais
+
+### Dependências
+
+* Docker
+
+### Instalação
+
+* Docker
+* docker-compose
+
+### Executando aplicação
+
+```
+./start.sh
+```
+
+### Executando testes
+
+```
+./rspec.sh
+```

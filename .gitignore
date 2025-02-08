@@ -1,1 +1,25 @@
 .idea
+.idea/*
+
+# Ignore bundler config.
+/api/.bundle
+
+# Ignore all environment files (except templates).
+/.env*
+!/.env*.erb
+
+# Ignore all logfiles and tempfiles.
+/api/log/*
+/api/tmp/*
+/api/tmp/cache/*
+
+# Ignore pidfiles, but keep the directory.
+/api/tmp/pids/*
+
+# Ignore storage (uploaded files in development and any SQLite databases).
+/api/storage/*
+/api/tmp/storage/*
+
+# Ignore master key for decrypting credentials and more.
+/api/config/master.key
+/api/coverage/*
