@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importador CNAB</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/table.css">
+</head>
+<body>
+
+<header>
+    <h1>Importador de Arquivo CNAB</h1>
+</header>
+
+<section>
+    <form id="upload-form">
+        <label for="file">Selecione um arquivo CNAB:</label>
+        <input type="file" id="file" name="file" accept=".txt">
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<section>
+    <h2>Transações</h2>
+    <table id="transactions-table">
+        <thead>
+        <tr>
+            <th>Loja</th>
+            <th>Descrição</th>
+            <th>Valor CNAB</th>
+            <th>Valor Final</th>
+            <th>Data</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Dados serão inseridos aqui via JavaScript -->
+        </tbody>
+    </table>
+</section>
+</body>
+</html>
