@@ -1,14 +1,26 @@
 # CNAB API
 
-API para importação de arquivos CNAB
+API para importação de arquivos CNAB e visualização das transações financeiras.
 
-## Descrição
+É um fork do projeto [desafio dev] da ByCoders. Readme original [README-original.md](README-original.md)
 
-API para importação de arquivos CNAB e visualização das transações.
+Este projeto tem como objetivo **upload e processamento de arquivos CNAB**, normalizando os dados financeiros de lojas e armazenando essas informações em um banco de dados relacional. Além disso, as transações processadas são disponibilizadas para visualização via API.
 
-É um fork do projeto [desafio dev] da ByCoders.  Readme original [README-original.md](README-original.md)
+## 🚀 Tecnologias Utilizadas
+![Rails][Rails]![Docker][Docker]![PostgreSQL][PostgreSQL]![Sidekiq][Sidekiq]![Redis][Redis]
+### Frontend
+- **HTML**: Estrutura básica da interface, criando o esqueleto das páginas e permitindo a interação do usuário.
+- **CSS**: Estilização e layout responsivo, garantindo uma interface agradável e acessível em diversos dispositivos.
+- **JavaScript**: Interatividade e manipulação dos dados na interface do usuário, permitindo ações dinâmicas como o upload do arquivo CNAB e a exibição das informações processadas.
 
-# Documentação do CNAB
+### Backend
+- **Ruby on Rails**: Framework para desenvolvimento do backend da aplicação, facilitando a construção da API e a integração com o banco de dados.
+- **Sidekiq**: Processamento de jobs assíncronos para tarefas de longa duração, como o processamento e normalização dos arquivos CNAB.
+- **Redis**: Utilizado como broker para o Sidekiq e também para cache de dados temporários, melhorando a performance da aplicação.
+- **PostgreSQL**: Banco de dados relacional utilizado para armazenar as movimentações financeiras e informações relacionadas, garantindo integridade e flexibilidade no armazenamento dos dados.
+
+## 📄 Documentação do CNAB
+
 
 | Descrição do campo  | Inicio | Fim | Tamanho | Comentário
 | ------------- | ------------- | -----| ---- | ------
@@ -35,38 +47,49 @@ API para importação de arquivos CNAB e visualização das transações.
 | 8 | Recebimento DOC | Entrada | + |
 | 9 | Aluguel | Saída | - |
 
-## Feito com
-![Rails][Rails]![Docker][Docker]![PostgreSQL][PostgreSQL]![Sidekiq][Sidekiq]![Redis][Redis]
+## 🚀 Passos Iniciais
 
-## Passos iniciais
+### 🛠️ Dependências
 
-### Dependências
+Antes de rodar o projeto, verifique se você possui as seguintes dependências instaladas:
 
-* Docker
+- **Docker**: Para criar e gerenciar os containers da aplicação.
+- **Docker Compose**: Para orquestrar os containers e facilitar o processo de execução do ambiente.
 
-### Instalação
+### 🔧 Instalação
 
-* Docker
-* docker-compose
+1. **Clone o repositório** para sua máquina local:
+   ```bash
+   git clone https://github.com/bergsonsud/desafio-dev.git
+   cd desafio-dev
 
-### Executando aplicação
+2. **Executar aplicação**:
+   ```bash
+   ./start.sh
 
-```
-./start.sh
-```
+3. **Executar testes**:
+   ```bash
+   ./rspec.sh
 
-### Executando testes
+### 🌐 Links Úteis
 
-```
-./rspec.sh
-```
+#### Local (Desenvolvimento)
 
-### Links
+- **Aplicação Web**: [http://localhost](http://localhost)  
+  Acesse a interface web da aplicação localmente.
 
-* Aplicação http://localhost
-* API http://localhost/api
-* Documentação da API http://localhost/api-docs
+- **API**: [http://localhost/api](http://localhost/api)  
+  Endereço base para interagir com a API da aplicação.
 
+- **Documentação da API**: [http://localhost/api-docs](http://localhost/api-docs)  
+  Acesse a documentação interativa da API gerada pelo RSwag.
+
+#### Demo (Em Produção)
+
+- **Aplicação Web**: [http://vps56446.publiccloud.com.br/cnab/](http://vps56446.publiccloud.com.br/cnab/)  
+  Acesse a versão demo da aplicação em produção.
+
+---
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
