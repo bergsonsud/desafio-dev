@@ -3,7 +3,7 @@
 require "swagger_helper"
 
 RSpec.describe "Uploads API", type: :request do
-  path "/v1/upload" do
+  path "/api/v1/upload" do
     post "Faz o upload de um arquivo CNAB e inicia o processamento" do
       tags "Uploads"
       consumes "multipart/form-data"

@@ -3,7 +3,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'V1::Transactions API', type: :request do
-  path '/v1/transactions' do
+  path '/api/v1/transactions' do
     get 'Retrieve all transactions' do
       tags 'Transactions'
       produces 'application/json'
