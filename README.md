@@ -9,9 +9,10 @@ Este projeto tem como objetivo **upload e processamento de arquivos CNAB**, norm
 ## 🚀 Tecnologias Utilizadas
 ![Rails][Rails]![Docker][Docker]![PostgreSQL][PostgreSQL]![Sidekiq][Sidekiq]![Redis][Redis]
 ### Frontend
-- **HTML**: Estrutura básica da interface, criando o esqueleto das páginas e permitindo a interação do usuário.
-- **CSS**: Estilização e layout responsivo, garantindo uma interface agradável e acessível em diversos dispositivos.
-- **JavaScript**: Interatividade e manipulação dos dados na interface do usuário, permitindo ações dinâmicas como o upload do arquivo CNAB e a exibição das informações processadas.
+- **HTML5**: Estrutura semântica e moderna
+- **Tailwind CSS v4**: Framework CSS utility-first para estilização
+- **Vanilla JavaScript**: Código modular com padrão de service
+- **Jest**: Testes unitários com 100% de cobertura
 
 ### Backend
 - **Ruby on Rails**: Framework para desenvolvimento do backend da aplicação, facilitando a construção da API e a integração com o banco de dados.
@@ -67,9 +68,9 @@ Antes de rodar o projeto, verifique se você possui as seguintes dependências i
    ```bash
    ./start.sh
 
-3. **Executar testes**:
+3. **Executar todos os testes** (backend RSpec + frontend Jest):
    ```bash
-   ./rspec.sh
+   ./spec.sh
 
 ### 🌐 Links Úteis
 
@@ -81,7 +82,7 @@ Antes de rodar o projeto, verifique se você possui as seguintes dependências i
 - **API**: [http://localhost/api](http://localhost/api)  
   Endereço base para interagir com a API da aplicação.
 
-- **Documentação da API**: [http://localhost/api-docs](http://localhost/api-docs)  
+- **Documentação da API**: [http://localhost/api-docs/index.html](http://localhost/api-docs/index.html)  
   Acesse a documentação interativa da API gerada pelo RSwag.
 
 #### Demo (Em Produção)

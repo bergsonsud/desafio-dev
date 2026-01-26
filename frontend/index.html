@@ -4,41 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Importador CNAB</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/output.css">
 </head>
-<body>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <header class="text-center mb-12 fade-in">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Importador de Arquivo CNAB</h1>
+            <p class="text-gray-600 text-lg">Sistema de processamento de transações bancárias</p>
+        </header>
 
-<header>
-    <h1>Importador de Arquivo CNAB</h1>
-</header>
+        <main class="space-y-8">
+            <section class="bg-white rounded-xl shadow-lg p-8 fade-in">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Upload de Arquivo</h2>
+                <form id="upload-form" class="space-y-6">
+                    <div class="space-y-4">
+                        <label for="file" class="flex items-center justify-center w-full px-6 py-8 border-2 border-dashed border-gray-300 rounded-xl hover:border-primary-500 transition-colors cursor-pointer bg-gray-50 hover:bg-gray-100">
+                            <div class="text-center">
+                                <span class="text-5xl mb-3 block">📁</span>
+                                <span class="text-gray-700 font-medium block mb-1">Selecione um arquivo CNAB (.txt)</span>
+                                <span class="text-gray-500 text-sm">Clique para escolher ou arraste o arquivo aqui</span>
+                            </div>
+                        </label>
+                        <input type="file" id="file" name="file" accept=".txt" class="hidden">
+                        <span id="file-name" class="text-sm text-gray-600 font-medium block text-center"></span>
+                    </div>
+                    <button type="submit" class="btn-primary w-full">
+                        <span>Processar Arquivo</span>
+                    </button>
+                </form>
+                <div id="upload-status" class="mt-4 p-4 rounded-lg text-center font-medium hidden"></div>
+            </section>
 
-<section>
-    <form id="upload-form">
-        <label for="file">Selecione um arquivo CNAB:</label>
-        <input type="file" id="file" name="file" accept=".txt">
-        <button type="submit">Enviar</button>
-    </form>
-</section>
+            <section class="bg-white rounded-xl shadow-lg p-8 fade-in">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-semibold text-gray-800">Transações por Loja</h2>
+                    <button id="refresh-btn" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors flex items-center gap-2" title="Atualizar dados">
+                        <span class="text-xl">↻</span>
+                        <span>Atualizar</span>
+                    </button>
+                </div>
+                
+                <div id="loading" class="flex flex-col items-center justify-center py-12 hidden">
+                    <div class="w-12 h-12 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin mb-4"></div>
+                    <span class="text-gray-600 font-medium">Carregando transações...</span>
+                </div>
+                
+                <div id="empty-state" class="text-center py-12 hidden">
+                    <p class="text-gray-600 text-lg mb-2">Nenhuma transação encontrada.</p>
+                    <p class="text-gray-500">Faça upload de um arquivo CNAB para começar.</p>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table id="transactions-table" class="w-full">
+                        <thead>
+                            <tr class="bg-gray-100 border-b border-gray-200">
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-700">Loja</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-700">Descrição</th>
+                                <th class="px-6 py-4 text-right text-sm font-semibold text-gray-700">Valor Original</th>
+                                <th class="px-6 py-4 text-right text-sm font-semibold text-gray-700">Valor com Sinal</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-700">Data</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
 
-<section>
-    <h2>Transações</h2>
-    <table id="transactions-table">
-        <thead>
-        <tr>
-            <th>Loja</th>
-            <th>Descrição</th>
-            <th>Valor CNAB</th>
-            <th>Valor Final</th>
-            <th>Data</th>
-        </tr>
-        </thead>
-        <tbody>
-        <!-- Dados serão inseridos aqui via JavaScript -->
-        </tbody>
-    </table>
-</section>
+        <footer class="text-center mt-12 py-6 text-gray-600">
+            <p>CNAB Develop - 2025</p>
+        </footer>
+    </div>
+
+    <script src="js/api-service.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/transactions.js"></script>
 </body>
-<script src="js/upload.js"></script>
-<script src="js/transactions.js"></script>
 </html>

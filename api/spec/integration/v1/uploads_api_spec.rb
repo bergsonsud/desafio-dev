@@ -3,7 +3,7 @@
 require "swagger_helper"
 
 RSpec.describe "Uploads API", type: :request do
-  path "/api/v1/upload" do
+  path "/v1/upload" do
     post "Faz o upload de um arquivo CNAB e inicia o processamento" do
       tags "Uploads"
       consumes "multipart/form-data"
@@ -31,8 +31,9 @@ RSpec.describe "Uploads API", type: :request do
       response "400", "Arquivo não enviado" do
         let(:file) { nil }
 
-        run_test! do |response|
-          expect(response.status).to eq(400)
+        it "returns a 400 response" do |example|
+          post "/v1/upload", params: {}
+          assert_response_matches_metadata(example.metadata)
         end
       end
     end
