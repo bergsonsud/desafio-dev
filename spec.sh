@@ -12,7 +12,8 @@ echo ""
 echo "========================================="
 echo "Executando testes do Frontend (Jest)"
 echo "========================================="
-cd frontend && npm test
+docker build -t desafio-dev-frontend-test -f frontend/Dockerfile.test frontend
+docker run --rm desafio-dev-frontend-test npm test
 
 FRONTEND_EXIT_CODE=$?
 
