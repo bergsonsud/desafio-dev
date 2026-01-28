@@ -23,3 +23,8 @@
 # Ignore master key for decrypting credentials and more.
 /api/config/master.key
 /api/coverage/*
+
+# Frontend
+/frontend/node_modules
+/frontend/styles/output.css
+/frontend/coverage
